@@ -1,17 +1,5 @@
 #include <cstdlib>  // for system()
 #include <iostream> // for std::cout and std::endl
-#include <Python.h>
-
-void runPythonCode(const char* code) {
-    // Initialize the Python interpreter
-    Py_Initialize();
-
-    // Execute Python code
-    PyRun_SimpleString(code);
-
-    // Finalize the Python interpreter
-    Py_Finalize();
-}
 
 void runExecutable(const char* command, const char* name) {
     // Print the command being run
@@ -35,14 +23,8 @@ int main() {
     const char* dataCommunicatorCommand = "C:\\Users\\Dopl\\Downloads\\Dopl\\dataCommunicator.exe";
     const char* robotCommand = "C:\\Users\\Dopl\\Downloads\\Dopl\\patient_site\\patient_site.exe";
 
-    // Run Python code
-    runPythonCode("print('Hello from embedded Python!')");
-
     // Run the first executable
     runExecutable(dataCommunicatorCommand, "dataCommunicator.exe");
-
-    //Run second executable
-    runExecutable(robotCommand, "patient_site.exe");
 
     // Run the third executable
     runExecutable(doplorCommand, "DoplOR.exe");
